@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-trainly-dev-154224-authRole",
+      "UnauthRoleArn": "arn:aws:iam::012427021900:role/amplify-trainly-dev-154224-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::012427021900:role/amplify-trainly-dev-154224-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-trainly-dev-154224-deployment",
+      "UnauthRoleName": "amplify-trainly-dev-154224-unauthRole",
+      "StackName": "amplify-trainly-dev-154224",
+      "StackId": "arn:aws:cloudformation:us-east-1:012427021900:stack/amplify-trainly-dev-154224/f38bd9f0-5fa7-11ee-bc69-1222e1fd621b",
+      "AmplifyAppId": "d34ip206zz4axu"
+    },
+    "categories": {
+      "api": {
+        "trainly": {}
+      }
+    }
+  }
+}

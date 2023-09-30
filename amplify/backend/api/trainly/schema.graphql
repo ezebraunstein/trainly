@@ -1,0 +1,55 @@
+type ExcerciseInstance @model (timestamps: null) @auth(rules: [{allow: public}]) {
+  id: ID!
+  reps: Int!
+  exerciseID: ID! @index(name: "byExercise")
+  blockID: ID! @index(name: "byBlock")
+}
+
+type Exercise @model (timestamps: null) @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String!
+  category: String!
+  video: String
+  description: String
+  ExcerciseInstances: [ExcerciseInstance] @hasMany(indexName: "byExercise", fields: ["id"])
+}
+
+type Block @model (timestamps: null) @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String!
+  sets: Int!
+  pause: String
+  dayID: ID! @index(name: "byDay")
+  ExcerciseInstances: [ExcerciseInstance] @hasMany(indexName: "byBlock", fields: ["id"])
+}
+
+type Day @model (timestamps: null) @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String
+  Blocks: [Block] @hasMany(indexName: "byDay", fields: ["id"])
+  routineID: ID! @index(name: "byRoutine")
+}
+
+type Routine @model (timestamps: null) @auth(rules: [{allow: public}]) {
+  id: ID!
+  Days: [Day] @hasMany(indexName: "byRoutine", fields: ["id"])
+}
+
+type Client @model (timestamps: null) @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String!
+  surname: String!
+  email: String!
+  DNI: Int!
+  coachs: [Coach] @manyToMany(relationName: "CoachClient")
+}
+
+type Coach @model (timestamps: null) @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String!
+  surname: String!
+  email: AWSEmail!
+  DNI: Int!
+  CUIL: Int
+  Clients: [Client] @manyToMany(relationName: "CoachClient")
+}

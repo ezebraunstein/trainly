@@ -9,8 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@auth0/auth0-react": "^2.2.1",
+    "@aws-amplify/ui-react": "^4.6.5",
+    "aws-amplify": "^5.3.11",
+    "next": "latest",
     "react": "latest",
+    "react-device-detect": "^2.2.3",
     "react-dom": "latest",
-    "next": "latest"
+    "react-router-dom": "^6.16.0"
   }
 }
